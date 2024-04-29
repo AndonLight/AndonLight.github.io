@@ -9,6 +9,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #F3EEEA;
         }
         nav {
             background-color: #333; /* Changed to match the first file */
@@ -64,11 +65,11 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             box-sizing: border-box;
-            font-size: 16px;
+            font-size: 16px
         }
         input[type="submit"] {
             font-family: Arial, sans-serif;
-            background-color: #e74c3c;
+            background-color: #776B5D;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -79,7 +80,7 @@
             margin-top: 20px; /* Added margin-top to separate the submit button */
         }
         input[type="submit"]:hover {
-            background-color: #c0392b;
+            background-color: #474037;
         }
         form {
             text-align: center; /* Centering the form content */
@@ -92,7 +93,7 @@
         }
         form textarea {
             width: calc(100% - 20px); /* Adjusted width to accommodate for padding */
-            height: 108px;
+            height: 114px;
             resize: vertical; /* Allowing vertical resizing */
         }
         @media (max-width: 600px) {
@@ -102,6 +103,16 @@
         }
         .center {
             text-align: center;
+        }
+        p {
+          margin-top: 50px;
+          margin-bottom: 50px;
+          font-size: 45px;
+        }
+        form p {
+          margin-top: -15px;
+          margin-bottom: 5px;
+          font-size: 16px;
         }
     </style>
 </head>
@@ -113,25 +124,24 @@
     </nav>
     <div class="container">
         <div class="content">
-            <p style="font-size: 60px">Send me an email</p>
+            <p>Send me an email</p>
             <form action="https://formsubmit.co/2484a81c409a20abe2614d30bd14a73d" method="POST">
                 <div>
-                    <input type="text" id="input-name" name="name" placeholder="Your Name" required>
-                    <br><br>
-                    <input type="email" id="input-email" name="email" placeholder="Your Email" required>
+                  <p class="form">Name:</p>
+                  <input type="text" id="input-name" name="name" placeholder="Your Name" required>
+                  <br><br>
+                  <p class="form">Email:</p>
+                  <input type="email" id="input-email" name="email" placeholder="Your Email" required>
                 </div>
                 <div>
-                    <textarea name="message" id="input-message" placeholder="Your Message"></textarea>
+                  <p class="form">Message:</p>
+                  <textarea name="message" id="input-message" placeholder="Your Message"></textarea>
                 </div>
                 <div>
                     <input type="submit" value="Submit">
                 </div>
             </form>
         </div>
-    </div>
-    <div class="center">
-        <br><br>
-        <a href="index.html">Go back</a>
     </div>
 </body>
 </html>
