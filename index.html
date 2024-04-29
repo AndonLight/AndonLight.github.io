@@ -3,34 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>About</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-            line-height: 0.5;
-        }
         nav {
-            background-color: #666;
-            padding: 10px;
+            background-color: #333;
+            padding: 32px;
             text-align: center;
         }
         nav a {
             color: #fff;
             text-decoration: none;
-            margin: 0 10px;
+            margin: 20px;
             position: relative;
+            transition: color 0.3s;
+	    font-size: 25px;
+        }
+        nav a:hover,
+        nav a.active {
+            color: #757575;
         }
         .separator {
             color: #fff;
             margin: 0 5px;
+	    font-size: 25px;
         }
         .separator::before,
         .separator::after {
@@ -57,11 +57,8 @@
     </style>
 </head>
 <body>
-    <header>
-        <h1 style="font-size: 40px">Home</h1>
-    </header>
     <nav>
-        <a href="index.html">Home</a><span class="separator">|</span>
+        <a href="index.html" class="active">About</a><span class="separator">|</span>
         <a href="portfolio.html">Portfolio</a><span class="separator">|</span>
         <a href="contact.html">Contact</a>
     </nav>

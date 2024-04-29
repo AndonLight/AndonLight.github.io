@@ -10,22 +10,40 @@
             margin: 0;
             padding: 0;
         }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-	    line-height: 0.5;
-        }
         nav {
-            background-color: #666;
-            padding: 10px;
+            background-color: #333; /* Changed to match the first file */
+            padding: 32px; /* Changed to match the first file */
             text-align: center;
         }
         nav a {
             color: #fff;
             text-decoration: none;
-            margin: 0 10px;
+            margin: 20px;
+            position: relative;
+            transition: color 0.3s;
+            font-size: 25px;
+        }
+        nav a:hover,
+        nav a.active {
+            color: #757575;
+        }
+        .separator {
+            color: #fff;
+            margin: 0 5px;
+            font-size: 25px;
+        }
+        .separator::before,
+        .separator::after {
+            content: '|';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .separator::before {
+            left: -10px;
+        }
+        .separator::after {
+            right: -10px;
         }
         .container {
             max-width: 800px;
@@ -36,15 +54,12 @@
             margin-top: 20px;
             text-align: center;
         }
-</style>
+    </style>
 </head>
 <body>
-    <header>
-        <h1 style="font-size: 40px">Portfolio</h1>
-    </header>
     <nav>
-        <a href="index.html">Home</a>
-        <a href="portfolio.html">Portfolio</a>
+        <a href="index.html">About</a><span class="separator">|</span>
+        <a href="portfolio.html" class="active">Portfolio</a><span class="separator">|</span>
         <a href="contact.html">Contact</a>
     </nav>
     <div class="container">
