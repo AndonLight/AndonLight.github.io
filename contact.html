@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            line-height: 0.5;
+        }
+        nav {
+            background-color: #666;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .content {
+            margin-top: 20px;
+            text-align: center;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            font-family: Arial, sans-serif;
+            width: calc(100% - 0px);
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            font-family: Arial, sans-serif;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #c0392b;
+        }
+        .form-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .form-container > div {
+            width: 48%;
+        }
+        @media (max-width: 600px) {
+            .form-container > div {
+                width: 100%;
+            }
+        }
+        .center {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="font-size: 40px">Contact</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <div class="container">
+        <div class="content">
+            <p style="font-size: 60px">Send me an email</p>
+            <div class="form-container">
+                <div>
+                    <input type="text" id="input-name" placeholder="Your Name">
+                    <br><br>
+                    <input type="email" id="input-email" placeholder="Your Email">
+                </div>
+                <div>
+                    <textarea name="message" id="input-message" placeholder="Your Message" style="height: 108px;"></textarea>
+                </div>
+            </div>
+            <br>
+            <input type="submit" value="Submit">
+        </div>
+    </div>
+    <div class="center">
+        <br><br>
+        <a href="index.html">Go back</a>
+    </div>
+</body>
+</html>
