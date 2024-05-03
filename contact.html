@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,38 +13,36 @@
         }
         nav {
             background-color: #333; /* Changed to match the first file */
-            padding: 32px; /* Changed to match the first file */
-            text-align: center;
+            padding: 0px; /* Adjust padding */
+            height: 70px; /* Adjust height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex; /* Display the list items horizontally */
+        }
+        nav li {
+            margin: 0 10px; /* Adjust margin */
         }
         nav a {
             color: #fff;
             text-decoration: none;
-            margin: 20px;
-            position: relative;
             transition: color 0.3s;
-            font-size: 25px;
+            font-size: 24px; /* Adjust font size */
+            padding: 16px 20px; /* Add padding to create boxes */
         }
         nav a:hover,
-        nav a.active {
-            color: #757575;
+        nav a.active,
+        nav li:hover a {
+            color: #757575; /* Keep the text color white */
         }
         .separator {
-            color: #fff;
-            margin: 0 5px;
-            font-size: 25px;
-        }
-        .separator::before,
-        .separator::after {
-            content: '|';
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-        .separator::before {
-            left: -10px;
-        }
-        .separator::after {
-            right: -10px;
+          color: #fff;
+          font-size: 24px; /* Adjust font size */
         }
         .container {
             max-width: 800px;
@@ -105,37 +103,67 @@
             text-align: center;
         }
         p {
-          margin-top: 50px;
-          margin-bottom: 50px;
-          font-size: 45px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            font-size: 45px;
         }
         form p {
-          margin-top: -15px;
-          margin-bottom: 5px;
-          font-size: 16px;
+            margin-top: -15px;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+        footer {
+            text-align: center;
+            padding: 3px;
+            color: black;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #F3EEEA;
+            height: 4rem;
+        }
+        footer a {
+            text-decoration: none;
+            color: #000;
+        }
+        footer p {
+            margin-right: 30px;
+            font-size: 16px;
+            display: inline;
+        }
+        footer hr {
+            margin-top: 0;
+            height: 1rem;
+        }
+        footer .separator {
+            color: #000;
+            font-size: 14px;
+            margin: 0 5px;
         }
     </style>
 </head>
 <body>
     <nav>
-        <a href="index.html">About</a><span class="separator">|</span>
-        <a href="portfolio.html">Portfolio</a><span class="separator">|</span>
-        <a href="contact.html" class="active">Contact</a> <!-- Added 'active' class to match the active page -->
+        <ul>
+            <li><a href="index.html">About</a><span class="separator">|</span></li>
+            <li><a href="portfolio.html">Portfolio</a><span class="separator">|</span></li>
+            <li><a href="contact.html" class="active">Contact</a></li> <!-- Added 'active' class to match the active page -->
+        </ul>
     </nav>
     <div class="container">
         <div class="content">
             <p>Send me an email</p>
             <form action="https://formsubmit.co/2484a81c409a20abe2614d30bd14a73d" method="POST">
                 <div>
-                  <p class="form">Name:</p>
-                  <input type="text" id="input-name" name="name" placeholder="Your Name" required>
-                  <br><br>
-                  <p class="form">Email:</p>
-                  <input type="email" id="input-email" name="email" placeholder="Your Email" required>
+                    <p class="form">Name:</p>
+                    <input type="text" id="input-name" name="name" placeholder="Your Name" required>
+                    <br><br>
+                    <p class="form">Email:</p>
+                    <input type="email" id="input-email" name="email" placeholder="Your Email" required>
                 </div>
                 <div>
-                  <p class="form">Message:</p>
-                  <textarea name="message" id="input-message" placeholder="Your Message"></textarea>
+                    <p class="form">Message:</p>
+                    <textarea name="message" id="input-message" placeholder="Your Message"></textarea>
                 </div>
                 <div>
                     <input type="submit" value="Submit">
@@ -143,5 +171,12 @@
             </form>
         </div>
     </div>
+    <footer>
+        <hr>
+        <p style="display:inline">© 2024 Andon Light. All Rights Reserved.</p>
+        <a href="index.html">About</a><span class="separator">|</span>
+        <a href="portfolio.html">Portfolio</a><span class="separator">|</span>
+        <a href="contact.html">Contact</a>
+    </footer>
 </body>
 </html>
