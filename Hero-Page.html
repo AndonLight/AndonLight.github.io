@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    .container {
+        position: relative;
+        width: 100%;
+        height: 100vh; /* Full viewport height */
+    }
+    .background-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%; /* Fill the container */
+        height: 100%; /* Fill the container */
+        object-fit: contain; /* Maintain aspect ratio */
+    }
+
+    .foreground-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%; /* Fill the container */
+        height: 100%; /* Fill the container */
+        object-fit: contain; /* Maintain aspect ratio */
+        clip-path: polygon(50% 0, 50% 100%, 100% 100%, 100% 0); /* Initial clip path */
+        transition: clip-path 0.5s cubic-bezier(0.25, 0.1, 0.25, 1); /* Smooth transition */
+    }
+    .background-image {
+        z-index: 1; /* Ensure the background image is behind */
+    }
+    .foreground-image {
+        z-index: 2; /* Ensure the foreground image is on top */
+    }
+</style>
+</head>
+<body>
+    <div class="container" id="imageContainer">
+        <img src="Me-Full.png" alt="Background Image" draggable="false" class="background-image">
+        <img src="Me-Programmer-Full.png" alt="Foreground Image" draggable="false" class="foreground-image" id="foregroundImage">
+    </div>
+
+    <script>
+        // Get the container and foreground image elements
+        const foregroundImage = document.getElementById('foregroundImage');
+        let isMoving = false;
+
+        // Adjust clip-path of foreground image based on mouse position
+        document.addEventListener('mousemove', function(event) {
+            const mouseX = event.clientX;
+            const containerLeft = foregroundImage.getBoundingClientRect().left;
+            const containerRight = foregroundImage.getBoundingClientRect().right;
+            const containerWidth = foregroundImage.offsetWidth;
+            let cropPercentage;
+
+            if (mouseX <= containerLeft) {
+                cropPercentage = 100;
+            } else if (mouseX >= containerRight) {
+                cropPercentage = 0;
+            } else {
+                cropPercentage = 100 - ((mouseX - containerLeft) / containerWidth) * 100;
+            }
+
+            const transition = isMoving ? 'clip-path 0.3s linear' : 'clip-path 0.5s cubic-bezier(0.25, 0.1, 0.25, 1)';
+            foregroundImage.style.transition = transition;
+            foregroundImage.style.clipPath = `polygon(${cropPercentage}% 0, ${cropPercentage}% 100%, 100% 100%, 100% 0)`;
+
+            isMoving = true;
+            clearTimeout(this.mouseStopTimeout);
+            this.mouseStopTimeout = setTimeout(function() {
+                isMoving = false;
+            }, 100);
+        });
+
+        // Reset clip path when mouse leaves the container or the images
+        document.addEventListener('mouseleave', function(event) {
+            if (!foregroundImage.contains(event.target)) {
+                foregroundImage.style.clipPath = `polygon(50% 0, 50% 100%, 100% 100%, 100% 0)`;
+            }
+        });
+
+        // Set the initial clip path to 50% crop
+        foregroundImage.style.clipPath = `polygon(50% 0, 50% 100%, 100% 100%, 100% 0)`;
+    </script>
+</body>
+</html>
