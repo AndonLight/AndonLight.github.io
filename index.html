@@ -22,7 +22,7 @@ body {
 }
 
 /* Hero Page */
-iframe {
+object {
   /* Offsets everything below iframe by -7px to get rid of margin error */
   margin-bottom: -7px;
 }
@@ -80,8 +80,9 @@ footer {
 footer a {
   display: inline-block;
   text-decoration: none;
-  color: black;
+  color:#727272;
   font-size: 20px;
+  transition: color 0.5s ease;
 }
 .copyright {
   margin-right: 380px;
@@ -93,9 +94,13 @@ footer p {
   display: inline;
   padding-left: 8px;
   padding-right: 8px;
-  color: black;
+  color: #727272;
   text-decoration: none;
   font-size: 20px;
+}
+footer a:hover {
+  transition: color 0.5s ease;
+  color: #323232;
 }
 
 /* Image highlight */
@@ -161,7 +166,7 @@ html {
 	align-items: center;
 	justify-content: center;
 	background-color: #0D0D0D;
-	border-radius: 0.5rem;
+	border-radius: 50px;
 	padding: 0.5rem;
 	text-decoration: none;
 	transition: 0.2s ease-out;
@@ -213,7 +218,7 @@ html {
   </ul>
 
   <!-- Import the animated hero page -->
-  <iframe src="Hero-Page.html" frameborder="0" width="100%" height="600" scrolling="no"></iframe>
+  <object data="Hero-Page.html" frameborder="0" width="100%" height="600" scrolling="no"></object>
   <hr>
 
   <p>Text that is added to allow scrolling</p><br>
