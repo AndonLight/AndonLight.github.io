@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
 <title>Home</title>
 </head>
 
@@ -20,11 +21,17 @@ body {
   margin: 0px;
 }
 
-/* Horizontal Line */
-hr {
-  margin: 0;
+/* Hero Page */
+iframe {
+  /* Offsets everything below iframe by -7px to get rid of margin error */
+  margin-bottom: -7px;
 }
 
+/* Horizontal Line */
+hr {
+  margin-top: 0;
+  margin-bottom: 0;
+}
 /* Image */
 img {
   max-width: 100%;
@@ -36,6 +43,8 @@ ul {
   list-style-type: none;
   padding: 0;
   margin-top: 0;
+  margin-bottom: 0;
+  margin: 0;
   text-align: right;
   overflow: hidden;
   background-color: #0D0D0D;
@@ -44,7 +53,7 @@ ul {
   top: 0;
 }
 ul img {
-  margin-left: 225px;
+  margin-left: 300px;
 }
 li {
   display: inline-block;
@@ -54,6 +63,39 @@ li a {
   color: white;
   padding: 14px 16px;
   text-decoration: none;
+}
+
+/* Footer */
+footer {
+  background-color: #F2F2F2;
+  position: static;
+  bottom: 0;
+  width: 100%;
+  max-width: 100%;
+  padding: 0px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+}
+footer a {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+}
+.copyright {
+  margin-right: 380px;
+}
+.final_link {
+  margin-right: 45px;
+}
+footer p {
+  display: inline;
+  padding-left: 8px;
+  padding-right: 8px;
+  color: black;
+  text-decoration: none;
+  font-size: 20px;
 }
 
 /* Image highlight */
@@ -106,6 +148,56 @@ li a {
 .active {
   background-color: #a6a6a6;
 }
+
+/* Back to top */
+html {
+	scroll-behavior: smooth;
+}
+.back-to-top {
+	position: fixed;
+	bottom: 2rem;
+	right: 2rem;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #0D0D0D;
+	border-radius: 0.5rem;
+	padding: 0.5rem;
+	text-decoration: none;
+	transition: 0.2s ease-out;
+}
+.back-to-top span {
+	color: #ffffff;
+	font-size: 3rem;
+	transition: 0.2s ease-out;
+}
+.back-to-top:hover {
+	background-color: #323232;
+}
+.back-to-top:hover span {
+	transform: translateY(-4px);
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+.back-to-top {
+    /* Other styles */
+    animation-duration: 0.5s; /* Animation duration */
+    animation-fill-mode: forwards; /* Keeps the last frame of the animation */
+    display: inline-flex; /* Initially visible */
+    opacity: 1; /* Initially fully opaque */
+}
+.fadeIn {
+    animation-name: fadeIn;
+}
+.fadeOut {
+    animation-name: fadeOut;
+}
 </style>
 
 <body>
@@ -117,7 +209,7 @@ li a {
   <li><p>|</p></li>
   <li><a class="hover-underline-animation" href="#portfolios">Portfolios</a></li>
   <li><p>|</p></li>
-  <li><a class="hover-underline-animation" href="#contact" style="margin-right: 225px; margin-top: 20px;">Contact</a></li>
+  <li><a class="hover-underline-animation" href="#contact" style="margin-right: 300px; margin-top: 20px;">Contact</a></li>
   </ul>
 
   <!-- Import the animated hero page -->
@@ -134,6 +226,74 @@ li a {
   <p>Text that is added to allow scrolling</p><br>
   <p>Text that is added to allow scrolling</p><br>
   <p>Text that is added to allow scrolling</p><br>
+
+  <!-- BACK TO TOP BUTTON -->
+  <a href="#" class="back-to-top" id="backToTopBtn">
+		<span class="material-icons">arrow_upward</span>
+	</a>
+
+<footer>
+  <a class="copyright" href="#home">© 2024 Andon Light</a>
+  <a href="#about">About</a>
+  <p>|</p>
+  <a href="#portfolios">Portfolios</a>
+  <p>|</p>
+  <a class="final_link" href="#contact">Contact</a>
+</footer>
+
+<script>
+    // JavaScript to run a check after the page loads to see if the user is at the top of the page
+    window.onload = function() {
+        checkTopPosition();
+    };
+
+    // Function to check if the user is at the top of the page and adjust back-to-top button visibility accordingly
+    function checkTopPosition() {
+        var btn = document.getElementById("backToTopBtn");
+        if (document.body.scrollTop <= 20 && document.documentElement.scrollTop <= 20) {
+            // If user is at the top (or within 20 pixels from the top), fade out the button
+            btn.classList.add("fadeOut");
+        } else {
+            // If user is not at the top (or more than 20 pixels from the top), fade in the button
+            btn.classList.remove("fadeOut");
+            btn.classList.add("fadeIn"); // Add fadeIn class to smoothly fade in the button
+            btn.style.pointerEvents = "auto"; // Ensure pointer events are enabled
+        }
+    }
+
+    // Window scroll event listener to continuously check the user's scroll position
+    window.onscroll = function() {
+        scrollFunction();
+        checkTopPosition(); // Call the checkTopPosition function whenever the user scrolls
+    };
+
+    function scrollFunction() {
+        var btn = document.getElementById("backToTopBtn");
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            if (btn.classList.contains("fadeOut")) {
+                btn.classList.remove("fadeOut");
+                btn.style.pointerEvents = "auto"; // Enable pointer events when button is visible
+            }
+        } else {
+            if (!btn.classList.contains("fadeOut")) {
+                btn.classList.remove("fadeIn");
+                btn.classList.add("fadeOut");
+                btn.style.pointerEvents = "none"; // Disable pointer events when button is faded out
+            }
+        }
+    }
+
+    // Function to handle back-to-top button click
+    document.getElementById("backToTopBtn").addEventListener("click", function(event) {
+        var btn = document.getElementById("backToTopBtn");
+        if (!btn.classList.contains("fadeOut")) {
+            // Scroll to top only if button is visible
+            event.preventDefault();
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    });
+</script>
 
 </body>
 </html>

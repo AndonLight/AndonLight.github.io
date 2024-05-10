@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
+    body {
+      padding: 0px;
+      margin: 0px;
+    }
+
     .container {
         position: relative;
         width: 100%;
@@ -45,10 +50,11 @@
     <script>
         // Get the container and foreground image elements
         const foregroundImage = document.getElementById('foregroundImage');
+        const imageContainer = document.getElementById('imageContainer');
         let isMoving = false;
 
         // Adjust clip-path of foreground image based on mouse position
-        document.addEventListener('mousemove', function(event) {
+        imageContainer.addEventListener('mousemove', function(event) {
             const mouseX = event.clientX;
             const containerLeft = foregroundImage.getBoundingClientRect().left;
             const containerRight = foregroundImage.getBoundingClientRect().right;
@@ -75,10 +81,9 @@
         });
 
         // Reset clip path when mouse leaves the container or the images
-        document.addEventListener('mouseleave', function(event) {
-            if (!foregroundImage.contains(event.target)) {
-                foregroundImage.style.clipPath = `polygon(50% 0, 50% 100%, 100% 100%, 100% 0)`;
-            }
+        imageContainer.addEventListener('mouseleave', function() {
+            foregroundImage.style.transition = 'clip-path 0.5s cubic-bezier(0.25, 0.1, 0.25, 1)';
+            foregroundImage.style.clipPath = `polygon(50% 0, 50% 100%, 100% 100%, 100% 0)`;
         });
 
         // Set the initial clip path to 50% crop
