@@ -117,6 +117,20 @@
   .dropdown-content:hover {
     display: block;
   }
+  
+  /* Applies underline animation to dropdown button */
+  .dropdown:hover .dropbtn {
+    color: #a6a6a6;
+  }
+  .dropdown:hover .dropbtn:after {
+    background-color: #a6a6a6;
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  .dropdown .dropbtn:after {
+    transform: scaleX(0);
+    transform-origin: bottom right;
+  }
 
   /* Footer */
   footer {
@@ -266,7 +280,7 @@
   <li><a class="hover-underline-animation" href="about.html">About</a></li>
   <li><p>|</p></li>
   <div class="dropdown">
-     <button class="dropbtn">Portfolios</button>
+     <button class="dropbtn hover-underline-animation">Portfolios</button>
      <div class="dropdown-content">
        <a href="#portfolio_design">Design</a>
        <a href="#portfolio_programming">Programming</a>
