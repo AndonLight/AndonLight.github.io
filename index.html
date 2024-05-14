@@ -3,15 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Get resources from googleapis -->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
 <!-- Import Favicons -->
-<link rel="icon" href="favicon.ico">
+<link rel="icon" href="Resources/Icons/favicon.ico">
 
 <title>Home</title>
 </head>
 
 <style>
+
   /* Body Text */
   body {
     font-size: 28px;
@@ -22,14 +28,15 @@
   /* Hero Page */
   object {
     /* Offsets everything below object by -7px to get rid of margin error */
-    margin-bottom: -7px;
-    box-shadow: 0px 5px 8px 0px rgba(0,0,0,0.2);
+    margin-bottom: -8px;
+    box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.15);
   }
 
   /* Horizontal Line */
   hr {
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: -8px;
+    padding-bottom: 0;
   }
   /* Image */
   img {
@@ -70,13 +77,31 @@
     text-decoration: none;
   }
 
+  .Page {
+    margin: 0;
+    padding: 0;
+    background-color: #FAFAFA;
+  }
+
+  /* Scales images to fit container */
+  .container img {
+    object-fit: contain;
+  }
+
+  /* Fonts */
+  .montserrat_light {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: lighter;
+    font-style: normal;
+  }
+
   /* Dropdown button */
   .dropdown {
     position: relative;
     display: inline-block;
     overflow: visible;
   }
-
   .dropbtn {
     font-size: 28px;
     border: none;
@@ -88,7 +113,6 @@
     margin-top: 20px;
     display: inline-block;
   }
-
   .dropdown-content {
     display: none;
     position: fixed; /* Change position to fixed */
@@ -99,7 +123,6 @@
     overflow: visible;
     z-index: 999; /* Ensure dropdown is above other content */
   }
-
   .dropdown-content a {
     float: none;
     color: black;
@@ -108,16 +131,14 @@
     display: block;
     text-align: left;
   }
-
   .dropdown-content a:hover {
     background-color: #ddd;
   }
-
   .dropdown:hover .dropdown-content,
   .dropdown-content:hover {
     display: block;
   }
-  
+
   /* Applies underline animation to dropdown button */
   .dropdown:hover .dropbtn {
     color: #a6a6a6;
@@ -270,14 +291,69 @@
   .fadeOut {
       animation-name: fadeOut;
   }
+
+  /* Horizontal rules with text inside */
+  .separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 80%; /* Adjusted width */
+    margin: 0 auto; /* Centering horizontally */
+    padding: 0 50px;
+  }
+  .separator::before,
+  .separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #454545;
+  }
+  .separator:not(:empty)::before {
+    margin-right: .25em;
+  }
+  .separator:not(:empty)::after {
+    margin-left: .25em;
+  }
+
+  /* Recent section */
+  .recent {
+    display: flex;
+    justify-content: center; /* Center the squares horizontally */
+    width: 100%;
+  }
+  .box {
+    margin-top: 0px;
+    margin-bottom: 50px;
+    margin-right: auto; /* Center the squares horizontally */
+    margin-left: auto; /* Center the squares horizontally */
+    width: 350px;
+    height: 350px;
+    background: #ffffff;
+  }
+  .WorkContainer {
+    margin:0;
+    margin-left: 30px;
+    margin-right: 30px;
+    padding: 10px;
+    padding-bottom: 15px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    box-shadow: 0px 5px 8px 0px rgba(0,0,0,0.15);
+    cursor: pointer;
+    -webkit-transition-property: all;
+    -webkit-transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease;
+  }
+  .WorkContainer:hover {
+    transform: scale(1.1);
+  }
 </style>
 
 <body>
   <ul>
   <div class="brightness">
-  <a href="index.html"><img src="Logo.png" align="left" draggable="false" style="width:100px;align:left"></a>
+  <a href="index.html"><img src="Resources/Icons/Logo.png" align="left" draggable="false" style="width:100px;align:left"></a>
   </div>
-  <li><a class="hover-underline-animation" href="about.html">About</a></li>
+  <li><a class="hover-underline-animation" href="#About">About</a></li>
   <li><p>|</p></li>
   <div class="dropdown">
      <button class="dropbtn hover-underline-animation">Portfolios</button>
@@ -292,10 +368,25 @@
 
   <!-- Import the animated hero page -->
   <object data="Hero-Page.html" frameborder="0" width="100%" height="600" scrolling="no"></object>
-  <hr>
 
-  <!-- Blank space to test scrolling -->
-  <p style="margin-bottom:1000px">
+  <div class="Page">
+    <!-- About me section -->
+    <p style="padding-bottom:85px; margin-top:0px;">
+
+      <!-- Recent work section -->
+    <div class="separator montserrat_light">Some of My Recent Work</div>
+    <p style="margin-bottom:50px">
+
+    <!-- Recent project images -->
+    <div class="recent">
+          <div class="WorkContainer"><div class="box"><image src="Work/Steam_Redesign.jpg" style="border-radius: 5px;"><p style="text-align:center; margin-top:0px; font-size:22px;">My take on a redesign of the Steam logo</p></div></div>
+          <div class="WorkContainer"><div class="box"><image src="Work/Logo PSD.png" style="border-radius: 5px;"><p style="text-align:center; margin-top:0px; font-size:22px;">The Photoshop version of my personal logo</p></div></div>
+          <div class="WorkContainer"><div class="box"><image src="Work/Taipei Logo.webp" style="border-radius: 5px;"><p style="text-align:center; margin-top:0px; font-size:22px;">A logo I made for the city of Taipei, Taiwan</p></div></div>
+   </div>
+
+   <p style="padding-bottom:80px; margin-bottom:0px;">
+ </div>
+
 
   <!-- BACK TO TOP BUTTON -->
   <a href="#" class="back-to-top" id="backToTopBtn">
@@ -304,7 +395,7 @@
 
 <footer>
   <a class="copyright" href="index.html">© 2024 Andon Light</a>
-  <a href="about.html">About</a>
+  <a href="#About">About</a>
   <p>|</p>
   <a href="#portfolios">Design</a>
   <p>|</p>
