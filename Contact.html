@@ -245,6 +245,46 @@
     margin-left: .25em;
   }
 
+  /* Contact Form */
+  input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    display:block;
+
+    font-family: serif;
+    font-size: 18px;
+  }
+  input[type=submit] {
+    background-color: #212121;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 14%;
+    margin-left: 43%;
+    margin-right: 43%;
+  }
+  input[type=submit]:hover {
+    background-color: #666666;
+  }
+  .container {
+    border-radius: 5px;
+    padding: 20px;
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+  label {
+    display: block;
+    font-size: 20px;
+  }
+
 </style>
 
 <body>
@@ -269,6 +309,21 @@
     <!-- About me section -->
     <div class="separator montserrat_light">Contact Me</div>
 
+    <!-- Contact Form -->
+      <div class="container">
+        <form action="https://formsubmit.co/2484a81c409a20abe2614d30bd14a73d" method="POST">
+          <label for="input-name">Name</label>
+          <input type="text" id="input-name" name="name" placeholder="Your Name">
+
+          <label for="input-email">Email</label>
+          <input type="text" id="input-email" name="email" placeholder="Your Email">
+
+          <label for="input-message">Message</label>
+          <textarea id="input-message" name="message" placeholder="Your Message" style="height:200px;content:inline-flex;"></textarea>
+
+          <input type="submit" value="Submit">
+        </form>
+      </div>
 
   </div>
 
