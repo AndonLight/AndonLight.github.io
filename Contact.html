@@ -33,7 +33,7 @@
   }
 
   /* Navbar */
-  ul {
+  .navbar ul {
     list-style-type: none;
     padding: 0;
     margin-top: 0;
@@ -46,20 +46,20 @@
     position: sticky;
     top: 0;
   }
-  ul img {
+  .navbar ul img {
     margin-left: 300px;
   }
-  li {
+  .navbar li {
     display: inline-block;
     margin-top: 20px;
   }
-  li p {
+  .navbar li p {
     font-size: 28px;
     color: white;
     margin-top: 15px;
     margin-bottom: 0px;
   }
-  li a {
+  .navbar li a {
     display: block;
     color: white;
     padding: 14px 16px;
@@ -72,63 +72,6 @@
     font-optical-sizing: auto;
     font-weight: lighter;
     font-style: normal;
-  }
-
-  /* Dropdown button */
-  .dropdown {
-    position: relative;
-    display: inline-block;
-    overflow: visible;
-  }
-  .dropbtn {
-    font-size: 28px;
-    border: none;
-    outline: none;
-    color: white;
-    padding: 14px 16px;
-    background-color: inherit;
-    font-family: inherit;
-    margin-top: 20px;
-    display: inline-block;
-  }
-  .dropdown-content {
-    display: none;
-    position: fixed; /* Change position to fixed */
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    top: 80px; /* Adjust top position as needed */
-    overflow: visible;
-    z-index: 999; /* Ensure dropdown is above other content */
-  }
-  .dropdown-content a {
-    float: none;
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-  .dropdown-content a:hover {
-    background-color: #ddd;
-  }
-  .dropdown:hover .dropdown-content,
-  .dropdown-content:hover {
-    display: block;
-  }
-
-  /* Applies underline animation to dropdown button */
-  .dropdown:hover .dropbtn {
-    color: #a6a6a6;
-  }
-  .dropdown:hover .dropbtn:after {
-    background-color: #a6a6a6;
-    transform: scaleX(1);
-    transform-origin: bottom left;
-  }
-  .dropdown .dropbtn:after {
-    transform: scaleX(0);
-    transform-origin: bottom right;
   }
 
   /* Footer */
@@ -302,62 +245,32 @@
     margin-left: .25em;
   }
 
-  /* Recent section */
-  .recent {
-    display: flex;
-    justify-content: center; /* Center the squares horizontally */
-    width: 100%;
-  }
-  .box {
-    margin-top: 0px;
-    margin-bottom: 50px;
-    margin-right: auto; /* Center the squares horizontally */
-    margin-left: auto; /* Center the squares horizontally */
-    width: 350px;
-    height: 350px;
-    background: #ffffff;
-  }
-  .WorkContainer {
-    margin:0;
-    margin-left: 30px;
-    margin-right: 30px;
-    padding: 10px;
-    padding-bottom: 15px;
-    background-color: #FFFFFF;
-    border-radius: 5px;
-    box-shadow: 0px 5px 8px 0px rgba(0,0,0,0.15);
-    cursor: pointer;
-    -webkit-transition-property: all;
-    -webkit-transition-duration: 0.3s;
-    -webkit-transition-timing-function: ease;
-  }
-  .WorkContainer:hover {
-    transform: scale(1.1);
-  }
 </style>
 
 <body>
   <div class="content">
     <!-- Navbar -->
-    <ul>
-      <div class="brightness">
-      <a href="index.html"><img src="Resources/Icons/Logo.webp" align="left" draggable="false" style="width:100px;align:left"></a>
-      </div>
-      <li><a class="hover-underline-animation" href="About.html">About</a></li>
-      <li><p>|</p></li>
-      <li><a class="hover-underline-animation" href="Portfolio.html">Portfolio</a></li>
-      <li><p>|</p></li>
-      <li><a class="hover-underline-animation" href="Contact.html" style="margin-right: 300px">Contact</a></li>
-    </ul>
+    <div class="navbar">
+      <ul>
+        <div class="brightness">
+        <a href="index.html"><img src="Resources/Icons/Logo.webp" align="left" draggable="false" style="width:100px;align:left"></a>
+        </div>
+        <li><a class="hover-underline-animation" href="About.html">About</a></li>
+        <li><p>|</p></li>
+        <li><a class="hover-underline-animation" href="Portfolio.html">Portfolio</a></li>
+        <li><p>|</p></li>
+        <li><a class="hover-underline-animation" href="Contact.html" style="margin-right: 300px">Contact</a></li>
+      </ul>
+    </div>
 
     <!-- About me section -->
     <p style="padding-bottom:20px; margin-top:0px;">
 
-      <!-- About me section -->
+    <!-- About me section -->
     <div class="separator montserrat_light">Contact Me</div>
 
-  </div>
 
+  </div>
 
   <!-- BACK TO TOP BUTTON -->
 <a href="#" class="back-to-top" id="backToTopBtn"><span class="material-icons">arrow_upward</span></a>
