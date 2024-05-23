@@ -13,7 +13,7 @@
 <!-- Import Favicons -->
 <link rel="icon" href="Resources/Icons/favicon.ico">
 
-<title>Home</title>
+<title>About</title>
 </head>
 
 <style>
@@ -24,6 +24,7 @@
     padding: 0px;
     margin: 0px;
     background-color: #FAFAFA;
+    overflow-x: hidden; /* Prevent horizontal overflow */
   }
 
   /* Image */
@@ -245,6 +246,43 @@
     margin-left: .25em;
   }
 
+ /* About me section */
+  .containerLeft {
+    width: 80%;
+    margin: 0 auto; /* Centering the container */
+    padding: 0;
+    background-color: #FAFAFA;
+    text-align: left;
+    display: flex;
+    align-items: flex-start;
+    margin-top: 1.5%
+  }
+  .containerLeft img {
+    width: 52%; /* Adjust as needed */
+    margin-left: 5%; /* Adjust as needed */
+  }
+  .heading p {
+    font-size: 60px;
+    margin-top: 0;
+    margin-bottom: 35px;
+    font-weight: bold;
+    color: #000000;
+  }
+  .subtext p {
+    font-size: 20px;
+    color: #202020;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  .subtext a {
+    color: #727272;
+    transition: color 0.5s ease;
+    margin-bottom: 5px;
+  }
+  .subtext a:hover {
+    transition: color 0.5s ease;
+    color: #000000;
+  }
 </style>
 
 <body>
@@ -262,27 +300,44 @@
         <li><a class="hover-underline-animation" href="Contact.html" style="margin-right: 300px">Contact</a></li>
       </ul>
     </div>
-
-    <!-- About me section -->
     <p style="padding-bottom:20px; margin-top:0px;">
 
-    <!-- About me section -->
+    <!-- About me header -->
     <div class="separator montserrat_light">About Me</div>
 
+    <!-- About me section -->
+    <div class="containerLeft">
+      <div>
+        <div class="heading">
+          <p>Hi, I'm Andon...</p>
+        </div>
+        <div class="subtext">
+          <p>I am a designer and programmer</p>
+          <p>who enjoys creating/designing websites and apps.</p>
+
+          <p style="margin-top: 40px">I am proficient in HTML5, CSS3, JavaScript, C#, and Python</p>
+          <p>and I am experienced in programs such as Photoshop,</p>
+          <p style="margin-bottom: 70px;">InDesign, Illustrator, and more.</p>
+
+          <a href="Portfolio.html">Check Out My Work</a>
+        </div>
+      </div>
+      <img src="Resources/About Page/Me.webp" alt="Image">
+    </div>
 
   </div>
 
   <!-- BACK TO TOP BUTTON -->
-<a href="#" class="back-to-top" id="backToTopBtn"><span class="material-icons">arrow_upward</span></a>
-<footer class="footer">
-  <a class="copyright" href="index.html">© 2024 Andon Light</a>
-  <a href="About.html">About</a>
-  <p>|</p>
-  <a href="Portfolio.html">Portfolio</a>
-  <p>|</p>
-  <a class="final_link" href="Contact.html">Contact</a>
-</footer>
-<script>
+  <a href="#" class="back-to-top" id="backToTopBtn"><span class="material-icons">arrow_upward</span></a>
+  <footer class="footer">
+    <a class="copyright" href="index.html">© 2024 Andon Light</a>
+    <a href="About.html">About</a>
+    <p>|</p>
+    <a href="Portfolio.html">Portfolio</a>
+    <p>|</p>
+    <a class="final_link" href="Contact.html">Contact</a>
+  </footer>
+  <script>
     // JavaScript to run a check after the page loads to see if the user is at the top of the page
     window.onload = function() {
         checkTopPosition();
@@ -334,6 +389,6 @@
             document.documentElement.scrollTop = 0;
         }
     });
-</script>
+  </script>
 </body>
 </html>
