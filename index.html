@@ -322,9 +322,9 @@
 
     <!-- Recent project images -->
     <div class="recent">
-      <div class="WorkContainer"><div class="box"><a href="Portfolio.html"><image src="Work/Steam_Redesign.webp" style="border-radius: 5px;"></a><p style="text-align:center; margin-top:0px; font-size:22px;">My take on a redesign of the Steam logo</p></div></div>
-      <div class="WorkContainer"><div class="box"><a href="Portfolio.html"><image src="Work/Logo PSD.webp" style="border-radius: 5px;"></a><p style="text-align:center; margin-top:0px; font-size:22px;">The Photoshop version of my personal logo</p></div></div>
-      <div class="WorkContainer"><div class="box"><a href="Portfolio.html"><image src="Work/Taipei Logo.webp" style="border-radius: 5px;"></a><p style="text-align:center; margin-top:0px; font-size:22px;">A logo I made for the city of Taipei, Taiwan</p></div></div>
+      <div class="WorkContainer"><div class="box"><image src="Work/Steam_Redesign.webp" style="border-radius: 5px;" draggable="false"><p style="text-align:center; margin-top:0px; font-size:22px;">My take on a redesign of the Steam logo</p></div></div>
+      <div class="WorkContainer"><div class="box"><image src="Work/Logo PSD.webp" style="border-radius: 5px;" draggable="false"><p style="text-align:center; margin-top:0px; font-size:22px;">The Photoshop version of my personal logo</p></div></div>
+      <div class="WorkContainer"><div class="box"><image src="Work/Taipei Logo.webp" style="border-radius: 5px;" draggable="false"><p style="text-align:center; margin-top:0px; font-size:22px;">A logo I made for the city of Taipei, Taiwan</p></div></div>
    </div>
 
    <p style="padding-bottom:80px; margin-bottom:0px;">
@@ -396,6 +396,13 @@
             document.documentElement.scrollTop = 0;
         }
     });
+</script>
+<script>
+  document.querySelectorAll('.WorkContainer').forEach(image => {
+      image.addEventListener('click', (event) => {
+          window.open(event.target.src, '_blank');
+      });
+  });
 </script>
 </body>
 </html>
