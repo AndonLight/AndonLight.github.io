@@ -34,6 +34,12 @@
   }
 
   /* Navbar */
+  .navbar {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    z-index: 999
+  }
   .navbar ul {
     list-style-type: none;
     padding: 0;
@@ -247,7 +253,7 @@
   }
 
  /* About me section */
-  .containerLeft {
+  .container {
     width: 80%;
     margin: 0 auto; /* Centering the container */
     padding: 0;
@@ -257,7 +263,7 @@
     align-items: flex-start;
     margin-top: 1.5%
   }
-  .containerLeft img {
+  .container img {
     width: 52%; /* Adjust as needed */
     margin-left: 5%; /* Adjust as needed */
   }
@@ -311,7 +317,7 @@
     <div class="separator montserrat_light">About Me</div>
 
     <!-- About me section -->
-    <div class="containerLeft">
+    <div class="container">
       <div>
         <div class="heading">
           <p>Hi, I'm Andon...</p>
@@ -320,9 +326,10 @@
           <p>I am a designer and programmer</p>
           <p>who enjoys creating/designing websites and apps.</p>
 
-          <p style="margin-top: 40px">I am proficient in HTML5, CSS3, JavaScript, C#, and Python</p>
-          <p>and I am experienced in programs such as Photoshop,</p>
-          <p style="margin-bottom: 70px;">InDesign, Illustrator, and more.</p>
+          <p style="margin-top: 40px">I am proficient in <i>HTML5</i>, <i>CSS3</i>, <i>JavaScript</i>, <i>C#</i>, <i>Java</i></p>
+          <p>and <i>Python</i>.</p>
+          <p style="margin-top: 40px">I am also experienced in programs such as <i>Photoshop</i>,</p>
+          <p style="margin-bottom: 70px;"><i>InDesign</i>, <i>Illustrator</i>, <i>Aftereffects</i>, and more.</p>
 
           <a href="Portfolio.html">Check Out My Work</a>
         </div>
