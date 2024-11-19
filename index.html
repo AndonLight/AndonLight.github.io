@@ -17,6 +17,27 @@
 </head>
 
 <style>
+  /* Fonts */
+  @font-face {
+    font-family: 'StageGrotesk';
+    src: url(Resources/Fonts/StageGrotesk-Regular.otf);
+  }
+  @font-face {
+    font-family: 'StageGrotesk';
+    font-weight: lighter;
+    src: url(Resources/Fonts/StageGrotesk-Thin.otf);
+  }
+  @font-face {
+    font-family: 'StageGrotesk';
+    src: url(Resources/Fonts/StageGrotesk-ThinItalic.otf);
+    font-style: italic;
+  }
+  .montserrat_light {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: lighter;
+    font-style: normal;
+  }
 
   /* Body Text */
   body {
@@ -83,14 +104,6 @@
   /* Scales images to fit container */
   .container img {
     object-fit: contain;
-  }
-
-  /* Fonts */
-  .montserrat_light {
-    font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: lighter;
-    font-style: normal;
   }
 
   /* Footer */
@@ -162,6 +175,8 @@
     display: inline-block;
     position: relative;
     color: #FFFFFF; /* Initial text color */
+    font-family: 'StageGrotesk';
+    font-weight: normal;
   }
   .hover-underline-animation:after {
     content: '';
@@ -270,12 +285,9 @@
     justify-content: center; /* Center the squares horizontally */
     width: 100%;
   }
-  @font-face {
-    font-family: 'StageGroteskThin';
-    src: url(Resources/Fonts/StageGrotesk-Thin.otf);
-  }
   .recent p {
-    font-family: 'StageGroteskThin';
+    font-family: 'StageGrotesk';
+    font-weight: lighter;
     font-size: 0.7em;
   }
   .box {
@@ -330,9 +342,9 @@
 
     <!-- Recent project images -->
     <div class="recent">
-      <div class="WorkContainer"><div class="box"><image src="Work/Steam_Redesign.webp" style="border-radius: 5px;" draggable="false"><p style="text-align:center; margin-top:0px;">My take on a redesign of the Steam logo</p></div></div>
-      <div class="WorkContainer"><div class="box"><image src="Work/NextStepLogo.webp" style="border-radius: 5px;" draggable="false"><p style="text-align:center; margin-top:0px;">The official logo for Next Step Senior Relocation</p></div></div>
-      <div class="WorkContainer"><div class="box"><image src="Work/Taipei Logo.webp" style="border-radius: 5px;" draggable="false"><p style="text-align:center; margin-top:0px;">A logo I made for a project about Taipei, Taiwan</p></div></div>
+      <div class="WorkContainer"><div class="box"><image src="Work/Steam_Redesign.webp" style="border-radius: 5px;" draggable="false"><p style="text-align:center; margin-top:0px;">My take on a redesign of the <i>Steam</i> logo</p></div></div>
+      <div class="WorkContainer"><div class="box"><image src="Work/NextStepLogo.webp" style="border-radius: 5px;" draggable="false"><p style="text-align:center; margin-top:0px;">The official logo for <i>Next Step Senior Relocation</i></p></div></div>
+      <div class="WorkContainer"><div class="box"><image src="Work/Taipei Logo.webp" style="border-radius: 5px;" draggable="false"><p style="text-align:center; margin-top:0px;">A logo I made for a project about <i>Taipei, Taiwan</i></p></div></div>
    </div>
 
    <p style="padding-bottom:80px; margin-bottom:0px;">

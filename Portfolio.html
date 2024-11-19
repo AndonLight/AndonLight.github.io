@@ -17,6 +17,27 @@
 </head>
 
 <style>
+  /* Fonts */
+  @font-face {
+    font-family: 'StageGrotesk';
+    src: url(Resources/Fonts/StageGrotesk-Regular.otf);
+  }
+  @font-face {
+    font-family: 'StageGrotesk';
+    font-weight: lighter;
+    src: url(Resources/Fonts/StageGrotesk-Thin.otf);
+  }
+  @font-face {
+    font-family: 'StageGrotesk';
+    src: url(Resources/Fonts/StageGrotesk-ThinItalic.otf);
+    font-style: italic;
+  }
+  .montserrat_light {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: lighter;
+    font-style: normal;
+  }
 
   /* Body Text */
   body {
@@ -67,14 +88,6 @@
     color: white;
     padding: 14px 16px;
     text-decoration: none;
-  }
-
-  /* Fonts */
-  .montserrat_light {
-    font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: lighter;
-    font-style: normal;
   }
 
   /* Footer */
@@ -146,6 +159,8 @@
     display: inline-block;
     position: relative;
     color: #FFFFFF; /* Initial text color */
+    font-family: 'StageGrotesk';
+    font-weight: normal;
   }
   .hover-underline-animation:after {
     content: '';
