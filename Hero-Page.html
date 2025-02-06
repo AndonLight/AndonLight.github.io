@@ -88,7 +88,7 @@
             let relativeX = (mouseX - containerLeft) / containerWidth;
             relativeX = Math.min(Math.max(relativeX, 0), 1); // Clamp the value between 0 and 1
 
-            const opacityLeft = Math.max(1 - 1 * relativeX, minOpacity); // Adjust for left side
+            const opacityLeft = Math.max(2 - 2 * relativeX - 0.5, minOpacity); // Adjust for left side
             const opacityRight = Math.max(2 * relativeX - 0.5, minOpacity); // Adjust for right side
 
             foregroundTextLeft.style.transition = 'opacity 0.3s linear';
