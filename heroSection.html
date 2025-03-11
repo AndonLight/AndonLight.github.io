@@ -11,7 +11,8 @@
     }
 
     .container {
-        position: relative; /* Ensures absolute children stay inside */
+        position: fixed; /* Ensures absolute children stay inside */
+        top: 0;
         width: 100%;
         height: auto; /* Expand to fit the images */
     }
@@ -55,7 +56,7 @@
     .container::after {
         content: "";
         display: block;
-        padding-bottom: 56.25%; /* Adjust this based on aspect ratio */
+        padding-bottom: 50%; /* Adjust this based on aspect ratio */
     }
 
 </style>
