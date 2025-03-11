@@ -1,83 +1,413 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Get resources -->
-    <link rel="stylesheet" href="fonts.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="contactForm.css">
-    <link rel="stylesheet" href="navbar.css">
-    <link rel="stylesheet" href="footer.css">
-    <link rel="stylesheet" href="separator.css">
-    <link rel="stylesheet" href="backToTopButton.css">
-    <link rel="icon" href="Resources/Icons/favicon.ico">
-    <script src="backToTop.js"></script>
+<!-- Get resources from googleapis -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-    <!-- Get resources from googleapis -->
-    <link id="materialIconsStylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<!-- Import Favicons -->
+<link rel="icon" href="Resources/Icons/favicon.ico">
+
+<title>Contact</title>
 </head>
+
+<style>
+  /* Fonts */
+  @font-face {
+    font-family: 'StageGrotesk';
+    src: url(Resources/Fonts/StageGrotesk-Regular.otf);
+  }
+  @font-face {
+    font-family: 'StageGrotesk';
+    font-weight: lighter;
+    src: url(Resources/Fonts/StageGrotesk-Thin.otf);
+  }
+  @font-face {
+    font-family: 'StageGrotesk';
+    src: url(Resources/Fonts/StageGrotesk-ThinItalic.otf);
+    font-style: italic;
+  }
+  .montserrat_light {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: lighter;
+    font-style: normal;
+  }
+
+  /* Body Text */
+  body {
+    font-size: 28px;
+    padding: 0px;
+    margin: 0px;
+    background-color: #FAFAFA;
+  }
+
+  /* Image */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Navbar */
+  .navbar {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    z-index: 999
+  }
+  .navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin: 0;
+    text-align: right;
+    overflow: hidden;
+    background-color: #0D0D0D;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+  }
+  .navbar ul img {
+    margin-left: 300px;
+  }
+  .navbar li {
+    display: inline-block;
+    margin-top: 20px;
+  }
+  .navbar li p {
+    font-size: 28px;
+    color: white;
+    margin-top: 15px;
+    margin-bottom: 0px;
+  }
+  .navbar li a {
+    display: block;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  /* Footer */
+  html, body {
+    height: 100%;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  .content {
+    flex: 1 0 auto;
+  }
+  .footer {
+    flex-shrink: 0;
+  }
+  footer {
+    background-color: #F2F2F2;
+    position: static;
+    bottom: 0;
+    width: 100%;
+    max-width: 100%;
+    padding: 0px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+  }
+  footer a {
+    display: inline-block;
+    text-decoration: none;
+    color:#727272;
+    font-size: 20px;
+    transition: color 0.5s ease;
+  }
+  .copyright {
+    margin-right: 380px;
+  }
+  .final_link {
+    margin-right: 45px;
+  }
+  footer p {
+    display: inline;
+    padding-left: 8px;
+    padding-right: 8px;
+    color: #727272;
+    text-decoration: none;
+    font-size: 20px;
+  }
+  footer a:hover {
+    transition: color 0.5s ease;
+    color: #323232;
+  }
+
+  /* Image highlight */
+  .brightness {
+    background-color: #a6a6a6;
+    display: inline;
+  }
+  .brightness img {
+    transition: opacity 0.25s;
+    opacity: 1.0;
+  }
+  .brightness img:hover {
+    opacity: 0.35;
+  }
+
+  /* Navbar Underline animation */
+  .hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    color: #FFFFFF; /* Initial text color */
+    font-family: 'StageGrotesk';
+    font-weight: normal;
+  }
+  .hover-underline-animation:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    margin-bottom: 10px;
+    padding-left: -4px;
+    padding-right: -4px;
+    background-color: #a6a6a6; /* Initial underline color */
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out, background-color 0.25s ease-out, color 0.25s ease-out; /* Added color transition */
+  }
+  .hover-underline-animation:hover {
+    transition: color 0.25s;
+    color: #a6a6a6; /* Change text color */
+  }
+  .hover-underline-animation:hover:after {
+    background-color: #a6a6a6; /* Change underline color */
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  .hover-underline-animation:not(:hover):after {
+    transform: scaleX(0);
+    transform-origin: bottom right;
+  }
+
+  /* Back to top */
+  html {
+  	scroll-behavior: smooth;
+  }
+  .back-to-top {
+  	position: fixed;
+  	bottom: 2rem;
+  	right: 2rem;
+  	display: inline-flex;
+  	align-items: center;
+  	justify-content: center;
+  	background-color: #0D0D0D;
+  	border-radius: 50px;
+  	padding: 0.5rem;
+  	text-decoration: none;
+  	transition: 0.2s ease-out;
+  }
+  .back-to-top span {
+  	color: #ffffff;
+  	font-size: 3rem;
+  	transition: 0.2s ease-out;
+  }
+  .back-to-top:hover {
+  	background-color: #323232;
+  }
+  .back-to-top:hover span {
+  	transform: translateY(-4px);
+  }
+  @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+  }
+  @keyframes fadeOut {
+      from { opacity: 1; }
+      to { opacity: 0; }
+  }
+  .back-to-top {
+      /* Other styles */
+      animation-duration: 0.5s; /* Animation duration */
+      animation-fill-mode: forwards; /* Keeps the last frame of the animation */
+      display: inline-flex; /* Initially visible */
+      opacity: 1; /* Initially fully opaque */
+  }
+  .fadeIn {
+      animation-name: fadeIn;
+  }
+  .fadeOut {
+      animation-name: fadeOut;
+  }
+
+  /* Horizontal rules with text inside */
+  .separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 80%; /* Adjusted width */
+    margin: 0 auto; /* Centering horizontally */
+    padding: 0 50px;
+  }
+  .separator::before,
+  .separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #454545;
+  }
+  .separator:not(:empty)::before {
+    margin-right: .25em;
+  }
+  .separator:not(:empty)::after {
+    margin-left: .25em;
+  }
+
+  /* Contact Form */
+  input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    display:block;
+
+    font-family: serif;
+    font-size: 18px;
+  }
+  input[type=submit] {
+    background-color: #212121;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 14%;
+    margin-left: 43%;
+    margin-right: 43%;
+  }
+  input[type=submit]:hover {
+    background-color: #666666;
+  }
+  .container {
+    border-radius: 5px;
+    padding: 20px;
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+  label {
+    display: block;
+    font-size: 20px;
+  }
+
+</style>
+
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-container-content">
-                <a href="index.html" class="logo-opacity-animation"><img src="Resources/Icons/Logo.webp" align="center" draggable="false"></a>
-                <ul class="nav-links">
-                    <li><a href="about" class="hover-underline-animation">About</a></li>
-                    <li><a href="portfolio" class="hover-underline-animation">Portfolio</a></li>
-                    <li><a href="contact" class="hover-underline-animation">Contact</a></li>
-                </ul>
-            </div>
+  <div class="content">
+    <!-- Navbar -->
+    <div class="navbar">
+      <ul>
+        <div class="brightness">
+        <a href="index.html"><img src="Resources/Icons/Logo.webp" align="left" draggable="false" style="width:100px;align:left"></a>
         </div>
-    </nav>
+        <li><a class="hover-underline-animation" href="About.html">About</a></li>
+        <li><p>|</p></li>
+        <li><a class="hover-underline-animation" href="Portfolio.html">Portfolio</a></li>
+        <li><p>|</p></li>
+        <li><a class="hover-underline-animation" href="Contact.html" style="margin-right: 300px">Contact</a></li>
+      </ul>
+    </div>
+    <p style="padding-bottom:20px; margin-top:0px;">
 
-    <main class="content">
-        <div class="separator montserrat_light">Contact Me</div>
+    <!-- Contact me section -->
+    <div class="separator montserrat_light">Contact Me</div>
 
-        <div class="contact-container">
-            <form action="https://formsubmit.co/2484a81c409a20abe2614d30bd14a73d" method="POST">
-                <label for="input-name">Name</label>
-                <input type="text" id="input-name" name="name" placeholder="Your name..." required>
+    <!-- Contact Form -->
+      <div class="container">
+        <form action="https://formsubmit.co/2484a81c409a20abe2614d30bd14a73d" method="POST">
+          <label for="input-name">Name</label>
+          <input type="text" id="input-name" name="name" placeholder="Your Name" required>
 
-                <label for="input-email">Email</label>
-                <input type="text" id="input-email" name="email" placeholder="Your email..." required>
+          <label for="input-email">Email</label>
+          <input type="text" id="input-email" name="email" placeholder="Your Email" required>
 
-                <label for="input-message">Message</label>
-                <textarea id="input-message" name="message" placeholder="Your message..." required></textarea>
+          <label for="input-message">Message</label>
+          <textarea id="input-message" name="message" placeholder="Your Message" style="height:200px;content:inline-flex;" required></textarea>
 
-                <input type="submit" value="Submit">
-            </form>
-        </div>
-    </main>
+          <input type="submit" value="Submit">
+        </form>
+      </div>
 
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-container-content">
-                <div class="footer-left">
-                    <ul class="footer-links">
-                        <li><a href="index.html">© 2025 Andon Light</a></li>
-                    </ul>
-                </div>
-                <div class="footer-right">
-                    <ul class="footer-links">
-                        <li><a href="about">About</a></li>
-                        <li><a href="portfolio">Portfolio</a></li>
-                        <li><a href="contact">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
+  </div>
 
-    <!-- Back to top button -->
-    <a href="#" class="back-to-top" id="backToTopBtn" style="display: none;">
-        <span class="material-icons">arrow_upward</span>
-    </a>
+  <!-- BACK TO TOP BUTTON -->
+<a href="#" class="back-to-top" id="backToTopBtn"><span class="material-icons">arrow_upward</span></a>
+<footer class="footer">
+  <a class="copyright" href="index.html">© 2024 Andon Light</a>
+  <a href="About.html">About</a>
+  <p>|</p>
+  <a href="Portfolio.html">Portfolio</a>
+  <p>|</p>
+  <a class="final_link" href="Contact.html">Contact</a>
+</footer>
+<script>
+    // JavaScript to run a check after the page loads to see if the user is at the top of the page
+    window.onload = function() {
+        checkTopPosition();
+    };
 
+    // Function to check if the user is at the top of the page and adjust back-to-top button visibility accordingly
+    function checkTopPosition() {
+        var btn = document.getElementById("backToTopBtn");
+        if (document.body.scrollTop <= 20 && document.documentElement.scrollTop <= 20) {
+            // If user is at the top (or within 20 pixels from the top), fade out the button
+            btn.classList.add("fadeOut");
+        } else {
+            // If user is not at the top (or more than 20 pixels from the top), fade in the button
+            btn.classList.remove("fadeOut");
+            btn.classList.add("fadeIn"); // Add fadeIn class to smoothly fade in the button
+            btn.style.pointerEvents = "auto"; // Ensure pointer events are enabled
+        }
+    }
+
+    // Window scroll event listener to continuously check the user's scroll position
+    window.onscroll = function() {
+        scrollFunction();
+        checkTopPosition(); // Call the checkTopPosition function whenever the user scrolls
+    };
+
+    function scrollFunction() {
+        var btn = document.getElementById("backToTopBtn");
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            if (btn.classList.contains("fadeOut")) {
+                btn.classList.remove("fadeOut");
+                btn.style.pointerEvents = "auto"; // Enable pointer events when button is visible
+            }
+        } else {
+            if (!btn.classList.contains("fadeOut")) {
+                btn.classList.remove("fadeIn");
+                btn.classList.add("fadeOut");
+                btn.style.pointerEvents = "none"; // Disable pointer events when button is faded out
+            }
+        }
+    }
+
+    // Function to handle back-to-top button click
+    document.getElementById("backToTopBtn").addEventListener("click", function(event) {
+        var btn = document.getElementById("backToTopBtn");
+        if (!btn.classList.contains("fadeOut")) {
+            // Scroll to top only if button is visible
+            event.preventDefault();
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    });
+</script>
 </body>
 </html>

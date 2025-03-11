@@ -11,53 +11,40 @@
     }
 
     .container {
-        position: relative; /* Ensures absolute children stay inside */
+        position: relative;
         width: 100%;
-        height: auto; /* Expand to fit the images */
+        height: 100vh; /* Full viewport height */
     }
-
     .background-image {
         position: absolute;
         top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100%;
-        max-width: 1067px; /* Keep max width */
-        height: auto;
-        z-index: -2;
+        left: 0;
+        width: 100%; /* Fill the container */
+        height: 100%; /* Fill the container */
+        object-fit: contain; /* Maintain aspect ratio */
+        z-index: 1; /* Ensure the background image is behind */
     }
 
     .foreground-image {
         position: absolute;
         top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100%;
-        max-width: 1067px;
-        height: auto;
-        clip-path: polygon(50% 0, 50% 100%, 100% 100%, 100% 0);
-        transition: clip-path 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
-        z-index: -1;
+        left: 0;
+        width: 100%; /* Fill the container */
+        height: 100%; /* Fill the container */
+        object-fit: contain; /* Maintain aspect ratio */
+        clip-path: polygon(50% 0, 50% 100%, 100% 100%, 100% 0); /* Initial clip path */
+        transition: clip-path 0.5s cubic-bezier(0.25, 0.1, 0.25, 1); /* Smooth transition */
+        z-index: 2; /* Ensure the foreground image is on top */
     }
-
     .foreground-text-image {
         position: absolute;
         top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100%;
-        max-width: 1067px;
-        height: auto;
-        z-index: 1;
+        left: 0;
+        width: 100%; /* Fill the container */
+        height: 100%; /* Fill the container */
+        object-fit: contain; /* Maintain aspect ratio */
+        z-index: 3;
     }
-
-    /* Make sure the container takes the height of the images */
-    .container::after {
-        content: "";
-        display: block;
-        padding-bottom: 56.25%; /* Adjust this based on aspect ratio */
-    }
-
 </style>
 <body>
     <div class="container" id="imageContainer">
@@ -101,7 +88,7 @@
             let relativeX = (mouseX - containerLeft) / containerWidth;
             relativeX = Math.min(Math.max(relativeX, 0), 1); // Clamp the value between 0 and 1
 
-            const opacityLeft = Math.max(1 - 1 * relativeX, minOpacity); // Adjust for left side
+            const opacityLeft = Math.max(2 - 2 * relativeX - 0.5, minOpacity); // Adjust for left side
             const opacityRight = Math.max(2 * relativeX - 0.5, minOpacity); // Adjust for right side
 
             foregroundTextLeft.style.transition = 'opacity 0.3s linear';
