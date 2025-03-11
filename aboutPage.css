@@ -1,0 +1,60 @@
+/* Scalable Text Section */
+.scalable-text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1% 7.5%;
+    gap: 10px;
+}
+
+.scalable-text-wrapper {
+    max-width: 700px; /* You can control the max width here */
+    width: 100%; /* Ensures the container spans the full width of the available space */
+}
+
+.scalable-text-wrapper p {
+    padding-bottom: 15px;
+}
+
+.scalable-text-wrapper a {
+    color: #626262;
+    font-size: clamp(19px, 2vw, 25px);
+    transition: color 0.5s ease, transform 0.5s ease;
+    margin-top: 25px;
+    font-weight: bold;
+    display: block;
+}
+.scalable-text-wrapper a:hover {
+    transition: color 0.5s ease, transform 0.5s ease;
+    transform: scale(1.04);
+    position: relative;
+    color: #000000;
+}
+
+.scalable-text {
+    font-size: clamp(16px, 2vw, 20px); /* Responsive font size */
+    text-align: justify; /* Justify the text */
+    line-height: 1.6; /* Provides more spacing between lines for better readability */
+    text-justify: inter-word; /* Ensures even word spacing for justified text */
+    word-wrap: break-word; /* Prevents long words from breaking the layout */
+    margin: 0; /* Removes default margins for tighter control over spacing */
+}
+
+
+/* Header Text */
+.header-text {
+    font-size: clamp(32px, 5vw, 55px); /* Larger and scalable font size */
+    font-weight: bold; /* Bold text */
+    color: #000;
+    text-align: center;
+    padding-top: 15px;
+    margin-bottom: 20px;
+}
+
+/* Adjustment for smaller screens */
+@media screen and (max-width: 500px) {
+    .scalable-text {
+        text-align: center;
+    }
+}
