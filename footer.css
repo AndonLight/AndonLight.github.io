@@ -1,0 +1,76 @@
+/* Footer */
+.footer {
+    bottom: 0;
+    width: 100%;
+    background-color: #F2F2F2;
+    padding: 20px 0;
+}
+.footer-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+.footer-container-content {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    justify-content: space-between; /* Pushes links to opposite sides */
+    align-items: center;
+}
+
+/* To separate the copyright from other links */
+.footer-left {
+    display: flex;
+    justify-content: flex-start; /* Align to the left */
+}
+.footer-right {
+    display: flex;
+    justify-content: flex-end; /* Align to the right */
+}
+
+/* Footer Links */
+.footer-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+.footer-links li {
+    display: inline;
+}
+.footer-links a {
+    color: #676767;
+    font-family: 'Times New Roman', serif;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+.footer-links a:hover {
+    color: black;
+}
+
+/* Add left and right classes to footer items */
+.footer-container-content .footer-left {
+    flex: 1;
+}
+.footer-container-content .footer-right {
+    flex: 1;
+}
+
+/* Fix for smaller screens */
+@media screen and (max-width: 500px) {
+    .footer-container {
+        width: 95%;
+    }
+    .footer-container-content {
+        flex-direction: row; /* Stack links vertically */
+        align-items: center;
+    }
+    .footer-links {
+        gap: 10px;
+    }
+    .footer-links a {
+        font-size: 14px;
+    }
+}
