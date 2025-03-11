@@ -22,7 +22,7 @@ body {
 
 
 /* Hero Page */
-object {
+iframe {
     margin-top: 80px;
     box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.15);
     background-color: #FFFFFF;
@@ -32,4 +32,5 @@ object {
     height: auto;
     min-height: 600px; /* Ensure it has a minimum height */
     overflow: hidden;
+    overflow:-moz-hidden-unscrollable;
 }
