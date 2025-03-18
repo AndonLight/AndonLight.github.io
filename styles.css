@@ -39,6 +39,7 @@ iframe {
 .frameContainer {
     position: relative;
     width: 100%;
-    padding-bottom: 50%;
-    height: 0;
+    padding-bottom: min(50%, 594.5px); /* Limits padding-bottom to 400px max */
+    max-height: 600px; /* Adjust as needed */
 }
+

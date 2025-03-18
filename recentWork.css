@@ -1,11 +1,13 @@
 /* Recent Section */
 .recent {
     display: flex;
-    justify-content: center; /* Center the squares horizontally */
-    gap: 30px; /* Space between boxes horizontally */
-    flex-wrap: wrap; /* Allow the boxes to wrap */
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
     width: 100%;
+    margin: 0 auto; /* Center the section */
 }
+
 
 .recent p {
     font-family: 'StageGrotesk';
@@ -33,12 +35,13 @@
 }
 
 .box {
-    width: 350px; /* Fixed width */
+    width: 100%; /* Allow it to shrink */
+    max-width: 350px; /* Set the current size as the maximum */
     height: auto;
     background-color: #ffffff;
-    border-radius: 5px; /* Rounded corners */
-    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.15); /* Drop shadow */
-    overflow: hidden; /* Prevent image from overflowing corners */
+    border-radius: 5px;
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     padding: 15px;
