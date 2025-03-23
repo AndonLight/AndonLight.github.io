@@ -1,11 +1,10 @@
-/* Recent Section */
 .recent {
     display: flex;
     justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
     width: 100%;
-    margin: 0 auto; /* Center the section */
+    margin: 0 auto;
 }
 
 
@@ -13,7 +12,7 @@
     font-family: 'StageGrotesk';
     font-weight: lighter;
     font-size: 0.7em;
-    margin-top: 10px; /* Space between image and text */
+    margin-top: 10px;
 }
 
 .project-link {
@@ -31,12 +30,12 @@
 }
 
 .project-link .WorkContainer:hover {
-    transform: scale(1.05); /* Scale up on hover */
+    transform: scale(1.05);
 }
 
 .box {
-    width: 100%; /* Allow it to shrink */
-    max-width: 350px; /* Set the current size as the maximum */
+    width: 100%;
+    max-width: 350px;
     height: auto;
     background-color: #ffffff;
     border-radius: 5px;
@@ -48,14 +47,14 @@
 }
 
 .box img {
-    width: 100%; /* Make the image take the full width of the container */
+    width: 100%;
     height: auto;
-    border-radius: 5px; /* Optional: rounded corners on the image */
-    object-fit: cover; /* Make sure the image fits well */
+    border-radius: 5px;
+    object-fit: cover;
 }
 
 .box p {
     text-align: center;
     font-size: 1em;
-    margin-top: 15px; /* Space between image and text */
+    margin-top: 15px;
 }

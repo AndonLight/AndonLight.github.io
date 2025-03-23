@@ -1,4 +1,3 @@
-/* Separator with text in middle */
 .separator {
     display: flex;
     flex-direction: row;
@@ -6,8 +5,8 @@
     align-items: center;
     text-align: center;
     font-size: 28px;
-    width: 100%; /* Adjusted width */
-    margin: 0 auto; /* Centering horizontally */
+    width: 100%;
+    margin: 0 auto;
     padding: 0 7.5%;
 }
 .separator::before,
@@ -23,7 +22,6 @@
     margin-left: .25em;
 }
 
-/* Fix for smaller screens */
 @media screen and (max-width: 500px) {
     .separator {
         font-size: 24px;
